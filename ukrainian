@@ -1,19 +1,19 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-local Window = Library.CreateLib("Pon hub(discord.gg/tA3M5gZNdT)", "DarkTheme")
+local Window = Library.CreateLib("Pon hub", "DarkTheme")
 
 -- MAIN
-local Main = Window:NewTab("Main")
-local MainSection = Main:NewSection("Main")
+local Main = Window:NewTab("Інші скріпти")
+local MainSection = Main:NewSection("Інші скріпти")
 
-MainSection:NewButton("Infinity Yield", "адміністраторський скріпт", function()
+MainSection:NewButton("Infinity Yield", "скріпт на адміністратора", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
 
-MainSection:NewButton("Cmd X", "адміністраторський скріпт", function()
+MainSection:NewButton("Cmd X", "скріпт на адміністратора", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source"))()
 end)
 
-MainSection:NewButton("Owl Hub", "universal esp and aimbot", function()
+MainSection:NewButton("Owl Hub", "звичайний вх і аімбот", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"),true))()
 end)
 
@@ -21,14 +21,42 @@ MainSection:NewButton("Keyboard(mobile)", "клавіатура для теле�
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"),true))()
 end)
 
+local Main = Window:NewTab("Гравець")
+local MainSection = Main:NewSection("Гравець")
+
+MainSection:NewToggle("Бескинечний Стрибок", "Стрибни", function()
+        local InfiniteJumpEnabled = true
+        game:GetService("UserInputService").JumpRequest:connect(function()
+            if InfiniteJumpEnabled then
+                game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+            end
+        end)
+    end)
+
+    MainSection:NewSlider("Швидкість", "Швидкість", 500, 16, function(s)
+        game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+    end)
+
+    MainSection:NewSlider("СилаСтрибка", "Стрибни", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+    end)
+
+MainSection:NewButton("Noclip(нажміть n)", "ходи через стіни", function()
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/prosko1234/noclip/main/noclip.lua"),true))()
+end)
+
+MainSection:NewButton("Fly(нажміть e)", "літай безкоштовно", function()
+     loadstring(game:HttpGet(("https://raw.githubusercontent.com/prosko1234/Fly/main/script.lua"),true))()
+end)
+
 local Main = Window:NewTab("Arsenal")
 local MainSection = Main:NewSection("Arsenal")
 
-MainSection:NewButton("Owl Hub", "працює на arsenal", function()
+MainSection:NewButton("Owl Hub", "працює в arsenal", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/CriShoux/OwlHub/master/OwlHub.txt"),true))()
 end)
 
-MainSection:NewButton("Strike Hub(cracked)", "Хороший скріпт теж", function()
+MainSection:NewButton("Strike Hub(крякнутий)", "Крутий скріпт теж", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/ccxmIcal/cracks/main/strikehub.lua"),true))()
 end)
 
@@ -39,7 +67,7 @@ MainSection:NewButton("Vynixius", "нормальний скріпт", function(
     loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Vynixius/main/Doors/Loader.lua"))()
 end)
 
-MainSection:NewButton("Msdoors", "добрий скріпт", function()
+MainSection:NewButton("Msdoors", "хороший скріпт", function()
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/mstudio45/MSDOORS/main/MSDOORS.lua"),true))()
 end)
 
@@ -51,7 +79,7 @@ MainSection:NewButton("Ominous Vibe", "ButtonInfo", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/OminousVibes-Exploit/Scripts/main/doors/loadstring.lua"))()
 end)
 
-MainSection:NewButton("Morph", "Тролити людей", function()
+MainSection:NewButton("Morph", "Підколюй людей", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ChronoAccelerator/Public-Scripts/main/Morphing/MorphScript.lua"))()
 end)
 
@@ -59,7 +87,7 @@ end)
 local Main = Window:NewTab("Counter blox")
 local MainSection = Main:NewSection("Counter blox")
 
-MainSection:NewButton("Stormy", "добрий скріпт", function()
+MainSection:NewButton("Stormy", "хороший скріпт", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/ik3ac/stormy-fixed-counter-blox-2023/main/.gitignore"))()
 end)
 
@@ -67,7 +95,7 @@ MainSection:NewButton("NooVster", "звичайний скріпт", function()
      loadstring(game:HttpGet(('https://raw.githubusercontent.com/NooVster/404/main/Source')))()
 end)
 
-MainSection:NewButton("Скін Чейнджер", "не візуальний", function()
+MainSection:NewButton("Skin changer", "не візуальний", function()
      loadstring(game:HttpGet(("https://raw.githubusercontent.com/prosko1234/skinchanger/main/skinchanger.lua"),true))()
 end)
 
@@ -75,6 +103,17 @@ end)
 local Main = Window:NewTab("Jailbreak")
 local MainSection = Main:NewSection("Jailbreak")
 
-MainSection:NewButton("Авто пограбування", "не мій скріпт", function()
+MainSection:NewButton("АвтоматичнеПограбування", "не мій скріпт", function()
      loadstring(game:HttpGet(("https://api.luarmor.net/files/v3/loaders/5d4b0843f800d5dcac07568e18190b7e.lua"),true))()
 end)
+
+
+    local Credits = Window:NewTab("Творці")
+    local CreditsSection = Credits:NewSection("Творці")
+
+
+    CreditsSection:NewLabel("Створений був pon228#3970")
+
+
+    CreditsSection:NewLabel("Діскорд: discord.gg/tA3M5gZNdT")
+
